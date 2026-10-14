@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login | CareerConnect</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="auth-container">
+
+  <h2 id="formTitle">Login</h2>
+
+  <!-- LOGIN FORM -->
+  <form id="loginForm">
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+
+    <select id="loginRole" required>
+      <option value="">Select Role</option>
+      <option value="student">Student</option>
+      <option value="recruiter">Recruiter</option>
+    </select>
+
+    <button type="submit">Login</button>
+    <p>Don’t have an account? <span onclick="showSignup()">Sign up</span></p>
+  </form>
+
+  <!-- SIGNUP FORM -->
+  <form id="signupForm" style="display:none;">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="signupEmail" placeholder="Email" required>
+    <input type="password" id="signupPassword" placeholder="Password" required>
+
+    <select id="signupRole" required>
+      <option value="">Select Role</option>
+      <option value="student">Student</option>
+      <option value="recruiter">Recruiter</option>
+    </select>
+
+    <button type="submit">Sign Up</button>
+    <p>Already have an account? <span onclick="showLogin()">Login</span></p>
+  </form>
+
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

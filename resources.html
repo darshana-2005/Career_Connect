@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CareerConnect | Resources</title>
+<link rel="stylesheet" href="resources.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo" style="width:35px; vertical-align:middle; margin-right:8px;">
+    CareerConnect
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+
+    
+
+      <a href="jobss.php">Jobs</a>
+    <a href="resources.html">Resources</a>
+   <a href="postjob.html">Post Job</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+ <!--<a href="login.html" class="btn-login">Login / Sign Up</a>-->
+</header>
+
+<!-- HERO -->
+<section class="hero-resources">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1>Explore Career Resources</h1>
+      <p>Access guides, tips, and tools to boost your career journey.</p>
+    </div>
+  </div>
+</section>
+
+<section class="resources-section">
+  <div class="resources-horizontal">
+
+    <div class="resource-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+      <h3>Create Resume</h3>
+      <p>Create a professional-quality resume in minutes.</p>
+      <button onclick="goTo('resume.html')">
+        CREATE YOUR RESUME
+      </button>
+    </div>
+
+    <div class="resource-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+      <h3>Create Cover Letter</h3>
+      <p>Create an eye-catching cover letter.</p>
+      <button onclick="goTo('cover.html')">
+        CREATE YOUR COVER LETTER
+      </button>
+    </div>
+
+    <div class="resource-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
+      <h3>Aptitude & Interview</h3>
+      <p>Company-specific tests & interview tips.</p>
+      <button onclick="goTo('aptitude.html')">
+        START PRACTICE
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<script src="resources.js"></script>
+
+
+<footer>
+  <p>
+   <a href="index.html">Home</a>|
+
+    
+
+      <a href="jobss.php">Jobs</a>|
+    <a href="resources.html">Resources</a>|
+   <a href="postjob.html">Post Job</a>|
+    <a href="contact.html">Contact</a>|
+  </p>
+  <p>© 2026 CareerConnect</p>
+</footer>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h3 id="popupTitle"></h3>
+    <p id="popupText"></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script src="resources.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About CareerConnect</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: #0a3d62;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(to right, #0a3d62, #1e90ff);
+  color: #fff;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* CONTENT */
+.section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.section.alt {
+  background: #eef4ff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.section h2 {
+  color: #0a3d62;
+  margin-bottom: 15px;
+}
+
+.section ul {
+  padding-left: 20px;
+}
+
+.section ul li {
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.cta {
+  background: #0a3d62;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta button {
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: #fbc531;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #1e272e;
+  color: #ccc;
+  text-align: center;
+  padding: 25px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">CareerConnect</div>
+  <nav>
+     <a href="index.html">Home</a>
+
+    
+
+      <a href="jobss.php">Jobs</a>
+    <a href="resources.html">Resources</a>
+   <a href="postjob.html">Post Job</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>About CareerConnect</h1>
+  <p>
+    CareerConnect is a modern platform designed to bridge the gap between
+    students, fresh graduates, and recruiters.
+  </p>
+</section>
+
+<!-- WHAT IS -->
+<section class="section">
+  <div class="container">
+    <div>
+      <h2>What is CareerConnect?</h2>
+      <p>
+        CareerConnect is a centralized job and internship portal that helps
+        students discover verified opportunities while enabling recruiters
+        to find the right talent efficiently.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+  </div>
+</section>
+
+<!-- GOALS -->
+<section class="section alt">
+  <div class="container">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978">
+    <div>
+      <h2>Our Goals</h2>
+      <ul>
+        <li>Make job and internship discovery simple and transparent</li>
+        <li>Support students in early career development</li>
+        <li>Reduce the gap between recruiters and skilled candidates</li>
+        <li>Provide a secure and trusted hiring environment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENTS -->
+<section class="section">
+  <div class="container">
+    <div>
+      <h2>What We Provide to Students</h2>
+      <ul>
+        <li>Verified jobs and internship listings</li>
+        <li>Easy application tracking</li>
+        <li>Skill development programs</li>
+        <li>Career guidance and resources</li>
+      </ul>
+    </div>
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+  </div>
+</section>
+
+<!-- RECRUITERS -->
+<section class="section alt">
+  <div class="container">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf">
+    <div>
+      <h2>What We Provide to Recruiters</h2>
+      <ul>
+        <li>Easy job posting and management</li>
+        <li>Access to student and fresher talent</li>
+        <li>Faster hiring process</li>
+        <li>Organized applicant tracking</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to Build Your Career?</h2>
+  <p>Join CareerConnect and take the next step forward.</p>
+<!--  <button onclick="location.href='login.html'">Get Started</button>-->
+</section>
+
+<footer>
+  <p>© 2026 CareerConnect</p>
+</footer>
+
+</body>
+</html>

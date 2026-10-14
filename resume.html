@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Resume Templates</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+body{margin:0;font-family:Segoe UI;background:#f4f6f8}
+
+/* HEADER */
+header{
+  background:#0a66c2;color:#fff;padding:15px 25px;
+  display:flex;align-items:center;gap:15px
+}
+header img{width:40px;height:40px}
+header h2{margin:0}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:25px}
+.card{
+  background:#fff;padding:15px;border-radius:8px;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);text-align:center
+}
+.card img{width:60px;margin-bottom:10px}
+.card button{
+  width:100%;padding:10px;border:0;
+  background:#0a66c2;color:#fff;border-radius:5px;cursor:pointer
+}
+
+/* VIEWER */
+.viewer{padding:20px}
+.hidden{display:none}
+.actions{margin-bottom:15px}
+.actions button{padding:8px 15px;margin-right:8px}
+
+/* RESUME BASE */
+.resume{
+  max-width:900px;margin:auto;background:#fff;
+  min-height:1100px;padding:35px;
+  box-shadow:0 10px 40px rgba(0,0,0,.15);
+  border-top:10px solid var(--accent)
+}
+
+/* HEADERS */
+.header-left{background:var(--accent);color:#fff;padding:20px}
+.header-center{text-align:center;border-bottom:3px solid var(--accent)}
+.header-box{border:2px solid var(--accent);padding:20px}
+
+/* LAYOUTS */
+.body{display:flex;margin-top:25px}
+.left{width:30%;padding-right:20px}
+.right{width:70%}
+
+.layout-right .body{flex-direction:row-reverse}
+.layout-top .body{display:block}
+.layout-single .body{display:block}
+
+/* SECTIONS */
+.section{margin-bottom:18px}
+.section h3{
+  margin-bottom:6px;border-bottom:2px solid var(--accent);
+  padding-bottom:4px
+}
+.boxed .section{background:#f9fafb;padding:10px;border-radius:6px}
+
+/* EDIT */
+[contenteditable]{outline:1px dashed #aaa;padding:2px}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="resumelogo.png">
+  <h2>Resume Templates</h2>
+</header>
+
+<div id="grid" class="grid"></div>
+
+<div id="viewer" class="viewer hidden">
+  <div class="actions">
+    <input type="color" onchange="changeColor(this.value)">
+    <button onclick="download()">Download PDF</button>
+    <button onclick="closeView()">Exit</button>
+  </div>
+  <div id="resume"></div>
+</div>
+
+<script>
+const logo="resumelogo.png";
+
+const templates=[
+{n:"Student Resume",h:"left",l:"left",c:"#22c55e",style:"",s:["Objective","Skills","Education","Internship","Projects","Achievements","Languages"]},
+{n:"Software Engineer",h:"center",l:"top",c:"#1e3a8a",style:"boxed",s:["Summary","Tech Skills","Experience","Projects","APIs","Databases","Education"]},
+{n:"UI/UX Designer",h:"box",l:"right",c:"#7c3aed",style:"",s:["Profile","Design Skills","Tools","Case Studies","UX Research","Projects"]},
+{n:"Fresher Resume",h:"center",l:"single",c:"#374151",style:"boxed",s:["Objective","Skills","Projects","Education","Certifications","Strengths"]},
+{n:"Skills Based",h:"left",l:"left",c:"#0f172a",style:"boxed",s:["Summary","Core Skills","Tools","Process","Certifications","Achievements"]},
+{n:"Project Heavy",h:"box",l:"top",c:"#0d9488",style:"",s:["Profile","Tech Stack","Major Projects","Minor Projects","Architecture"]},
+{n:"Marketing Resume",h:"center",l:"right",c:"#f97316",style:"",s:["Summary","Campaigns","Analytics","Content","Tools","Experience"]},
+{n:"Academic Resume",h:"left",l:"single",c:"#0284c7",style:"boxed",s:["Research","Education","Publications","Projects","Awards"]},
+{n:"Management Resume",h:"box",l:"top",c:"#6b7280",style:"",s:["Executive Summary","Leadership","Achievements","Experience","Stakeholders"]}
+];
+
+const grid=document.getElementById("grid");
+const viewer=document.getElementById("viewer");
+const resume=document.getElementById("resume");
+
+templates.forEach((t,i)=>{
+  grid.innerHTML+=`
+  <div class="card">
+    <img src="${logo}">
+    <h3>${t.n}</h3>
+    <button onclick="openTemplate(${i})">View Template</button>
+  </div>`;
+});
+
+function openTemplate(i){
+  const t=templates[i];
+  grid.style.display="none";
+  viewer.classList.remove("hidden");
+
+  resume.className=`resume layout-${t.l} ${t.style}`;
+  resume.style.setProperty("--accent",t.c);
+
+  const headerClass =
+    t.h==="center"?"header-center":
+    t.h==="box"?"header-box":"header-left";
+
+  resume.innerHTML=`
+  <div class="${headerClass}">
+    <h1 contenteditable>Your Name</h1>
+    <p contenteditable>Title | Email | Phone</p>
+  </div>
+
+  <div class="body">
+    <div class="left">${render(t.s.slice(0,Math.ceil(t.s.length/2)))}</div>
+    <div class="right">${render(t.s.slice(Math.ceil(t.s.length/2)))}</div>
+  </div>`;
+}
+
+function render(arr){
+  return arr.map(x=>`
+  <div class="section">
+    <h3>${x}</h3>
+    <p contenteditable>Edit ${x} here...</p>
+  </div>`).join("");
+}
+
+function closeView(){
+  viewer.classList.add("hidden");
+  grid.style.display="grid";
+}
+
+function download(){
+  html2pdf().from(resume).save("resume.pdf");
+}
+
+function changeColor(c){
+  resume.style.setProperty("--accent",c);
+}
+</script>
+
+</body>
+</html>

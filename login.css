@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  font-family: Segoe UI, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #0a3d62, #1e90ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container {
+  background: #fff;
+  padding: 30px;
+  width: 360px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #0a3d62;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+span {
+  color: #1e90ff;
+  cursor: pointer;
+  font-weight: bold;
+}

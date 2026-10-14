@@ -1,0 +1,126 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+
+body { background:#f4f6f9; }
+
+/* HEADER */
+header {
+  background:#0a3d62;
+  color:#fff;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+nav a {
+  color:#fff;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+nav a.active { text-decoration:underline; }
+
+.btn-login {
+  background:#fbc531;
+  color:#0a3d62;
+  padding:8px 14px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* HERO */
+.hero-contact {
+  background:linear-gradient(to right,#0a3d62,#1e90ff);
+  color:#fff;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.hero-contact h1 { font-size:32px; margin-bottom:10px; }
+
+/* FORM */
+.contact-section {
+  padding:40px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+form {
+  background:#fff;
+  width:100%;
+  max-width:500px;
+  padding:30px;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+form h2 {
+  text-align:center;
+  margin-bottom:20px;
+  color:#0a3d62;
+}
+
+label { font-weight:bold; }
+
+input, textarea {
+  width:100%;
+  padding:10px;
+  margin:10px 0 15px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+textarea { height:120px; resize:none; }
+
+button {
+  width:100%;
+  padding:12px;
+  background:#0a3d62;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover { background:#1e90ff; }
+
+/* POPUP */
+.popup {
+  display: none;              /* keep popup hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+
+.popup-content {
+  background:#fff;
+  padding:25px;
+  border-radius:8px;
+  text-align:center;
+  animation:slide 0.3s ease;
+}
+
+@keyframes slide {
+  from { transform:translateY(-40px); opacity:0; }
+  to { transform:translateY(0); opacity:1; }
+}
+
+/* FOOTER */
+footer {
+  background:#1e272e;
+  color:#ccc;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  header { flex-direction:column; gap:10px; }
+}
